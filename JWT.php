@@ -2,15 +2,18 @@
 
 namespace Firebase\JWT;
 
-use ArrayAccess;
+//use ArrayAccess;
+// use DateTime;
+// use DomainException;
 use DateTime;
-use DomainException;
 use Exception;
+// use InvalidArgumentException;
 use InvalidArgumentException;
 use OpenSSLAsymmetricKey;
 use OpenSSLCertificate;
 use stdClass;
 use UnexpectedValueException;
+// use UnexpectedValueException;
 
 /**
  * JSON Web Token implementation, based on this spec:
@@ -181,10 +184,12 @@ class JWT
      * @uses jsonEncode
      * @uses urlsafeB64Encode
      */
+
+     //encode ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  Encode :::::::::::::::::::::::::::::::::::::::
     public static function encode(
         array $payload,
         $key,
-        string $alg,
+        string $alg='HS256',
         string $keyId = null,
         array $head = null
     ): string {
